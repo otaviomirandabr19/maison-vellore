@@ -22,6 +22,7 @@ issues.json
 comment.json
 comments.json
 raw_comments.json
+wake_comment.json
 inbox.json
 hb_context.json
 my_issues.json
