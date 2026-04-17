@@ -1,0 +1,333 @@
+/* main.css - MAISON VELLORE */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+:root {
+  --color-bg-primary: #F4F0E8;
+  --color-bg-secondary: #EDE7D9;
+  --color-text-primary: #1A1814;
+  --color-text-secondary: #6B5D4F;
+  --color-accent: #A8906A;
+  --color-divider: #C9BFA8;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'EB Garamond', serif;
+
+  --margin-desktop: 8vw;
+  --margin-mobile: 6vw;
+  
+  --spacing-section: 120px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.label, .uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+
+em, i, .italic {
+  font-style: italic;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+p.primary {
+  color: var(--color-text-primary);
+}
+
+/* Layout & Grid */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Structural Elements */
+section {
+  padding-top: var(--spacing-section);
+  padding-bottom: var(--spacing-section);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header & Nav */
+header {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: color 0.6s ease;
+}
+
+nav a:hover, nav a:focus {
+  color: var(--color-accent);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 0;
+  border-bottom: none;
+}
+
+.monogram {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  letter-spacing: 0.25em;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.hero .subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+}
+
+/* Sections */
+.section-content {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .section-content {
+    grid-column: 3 / 11;
+  }
+}
+
+/* L Atelier - Asymmetrical */
+.atelier-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .atelier-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  .profile:nth-child(1) { grid-column: 2 / 6; margin-top: 2rem; }
+  .profile:nth-child(2) { grid-column: 7 / 12; }
+  .profile:nth-child(3) { grid-column: 1 / 7; margin-top: 4rem; }
+  .profile:nth-child(4) { grid-column: 8 / 11; margin-top: 6rem; }
+}
+
+.profile h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile .role {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-bg-secondary);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+footer .disclaimer {
+  margin-top: 4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-display);
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 2rem 0;
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-divider);
+}
+
+blockquote p {
+  color: var(--color-text-primary);
+  font-size: 1.2rem;
+}
+
+blockquote .roman {
+  font-style: normal;
+  font-size: 0.9em;
+  color: var(--color-text-secondary);
+}
+
+/* Links */
+.contact-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.4s ease, color 0.4s ease;
+}
+
+.contact-link:hover, .contact-link:focus {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-text-primary);
+}
+
+/* Dividers */
+.divider {
+  height: 1px;
+  background-color: var(--color-divider);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .divider {
+    width: calc(100% - (var(--margin-desktop) * 2));
+  }
+}
+@media (max-width: 767px) {
+  .divider {
+    width: calc(100% - (var(--margin-mobile) * 2));
+  }
+}
+
+/* Footer layout */
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.address-block p.label {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.address-block p {
+  margin-bottom: 0;
+}
